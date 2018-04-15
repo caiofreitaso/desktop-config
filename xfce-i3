@@ -4,6 +4,3 @@ CONFIGDIR=/home/caio/Documents/desktop-config
 
 i3 -c $CONFIGDIR/$1/i3.config
 
-feh --bg-fill $CONFIGDIR/$1/background.png
-
-conky -c $CONFIGDIR/$1/conky.config -d
