@@ -1,6 +1,8 @@
 #!/bin/bash -ev
 
-aptitude install gimp inkscape darktable remmina thunderbird
+# Debian repositories
+aptitude update
+aptitude install i3 gimp inkscape darktable remmina thunderbird
 
 # Sublime-Text
 ## 1) Add GPG key
@@ -22,7 +24,8 @@ echo "Downloading steam.deb"
 wget -q $STEAM_URL
 
 # Cockatrice
-COCKATRICE_URL=$(curl -s https://api.github.com/repos/Cockatrice/Cockatrice/releases/latest | awk '{if ($1 ~ /browser_download/ && $2 ~ /\.deb/) {gsub(/\"/, "", $2); print $2;}}')
+COCKATRICE_URL=$(curl -s https://api.github.com/repos/Cockatrice/Cockatrice/releases/latest |\
+ awk '{if ($1 ~ /browser_download/ && $2 ~ /\.deb/) {gsub(/\"/, "", $2); print $2;}}')
 COCKATRICE_FILE=$(echo ${COCKATRICE_URL} | rev | awk -F/ '{print $1}' | rev)
 echo "Downloading $COCKATRICE_FILE"
 wget -q $COCKATRICE_URL
