@@ -14,9 +14,15 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.
 
 # Opera
 ## 1) Add repository
-add-apt-repository 'deb https://deb.opera.com/opera-stable/ stable non-free'
+echo 'deb https://deb.opera.com/opera-stable/ stable non-free' | tee /etc/apt/sources.list.d/opera.list
 ## 2) Add GPG key
 wget -qO- https://deb.opera.com/archive.key | apt-key add -
+
+# Spotify
+## 1) Add the Spotify repository signing keys to be able to verify downloaded packages
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+## 2) Add the Spotify repository
+echo deb http://repository.spotify.com stable non-free | tee /etc/apt/sources.list.d/spotify.list
 
 # Steam
 STEAM_URL="http://media.steampowered.com/client/installer/steam.deb"
@@ -33,6 +39,6 @@ wget -q $COCKATRICE_URL
 dpkg -i steam.deb $COCKATRICE_FILE
 
 aptitude update
-aptitude install opera-stable sublime-text
+aptitude install opera-stable sublime-text spotify-client
 
 rm steam.deb $COCKATRICE_FILE

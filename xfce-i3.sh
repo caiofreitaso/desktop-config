@@ -1,4 +1,5 @@
 #!/bin/bash
 
 PROFILE=$1
-i3 -c ~/.i3/$PROFILE/i3.config
+TARGET_DISPLAY=${2:-:0.0}
+DISPLAY=${TARGET_DISPLAY} i3 -c ~/.i3/$PROFILE/i3.config
