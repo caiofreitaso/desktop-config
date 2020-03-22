@@ -15,7 +15,8 @@ while read n k; do sed -i "s/$n/$k/g" $PROFILEDIR/conky.config; done < $2
 
 EXTRA_COMMANDS="exec feh --bg-fill ~/.i3/$PROFILE/background.png\
 exec conky -d -c ~/.i3/$PROFILE/conky.config\
-exec xset dpms 120 120 300"
+exec_always xset dpms 120 120 300\
+exec pulseaudio --start"
 
 echo "${EXTRA_COMMANDS}" >> $PROFILEDIR/i3.config
 
