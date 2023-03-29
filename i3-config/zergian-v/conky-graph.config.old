@@ -1,0 +1,35 @@
+use_xft yes
+xftfont Fixed:size=9
+# 959e8b background
+# 4c1e54 PURPLE
+# 86837f PURPLE 20%
+# df0451 RED
+# a37e7e RED 20%
+
+update_interval 0.02
+
+default_color 4c1e54
+background no
+
+own_window yes
+own_window_class Conky
+own_window_type override
+own_window_transparent yes
+double_buffer yes
+draw_shades = false
+
+alignment top_left
+gap_x 270
+gap_y 20
+
+draw_borders no
+
+draw_graph_borders no
+show_graph_scale yes
+
+minimum_size 1890
+maximum_size 1890
+
+TEXT
+${cpugraph 213,1890 959e8b df0451 -t}
+${memgraph 213,1890 959e8b 4c1e54 -t}

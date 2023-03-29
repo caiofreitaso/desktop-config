@@ -1,0 +1,23 @@
+## variables
+set $mod      Mod4
+set $internal $mod+Shift
+set $start    $mod+Control
+set $alt      $mod+Mod1
+
+set $white      #ffffff
+set $black      #000000
+set $gray       #333333
+set $primary    #df0451
+set $secondary  #4c1e54
+set $background #959e8b
+
+## configuration
+font xft:Fixed Semi-Condensed 18
+focus_follows_mouse yes
+floating_modifier $mod normal
+
+default_border normal 2
+hide_edge_borders both
+
+## include
+include ~/.config/sway/config.d/*
