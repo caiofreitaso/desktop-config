@@ -12,7 +12,7 @@ set $secondary  #4c1e54
 set $background #959e8b
 
 ## configuration
-font xft:Fixed Semi-Condensed 18
+font Terminus 10
 focus_follows_mouse yes
 floating_modifier $mod normal
 
