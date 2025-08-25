@@ -12,7 +12,7 @@ set $secondary  #4c1e54
 set $background #959e8b
 
 ## configuration
-font Terminus 10
+font Terminus 18
 focus_follows_mouse yes
 floating_modifier $mod normal
 
@@ -21,3 +21,5 @@ hide_edge_borders both
 
 ## include
 include ~/.config/sway/config.d/*
+
+exec swayidle timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
