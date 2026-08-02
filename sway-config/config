@@ -12,12 +12,14 @@ set $secondary  #4c1e54
 set $background #959e8b
 
 ## configuration
-font Terminus 18
+font Terminus 8
 focus_follows_mouse yes
 floating_modifier $mod normal
 
 default_border normal 2
 hide_edge_borders both
+
+xwayland force
 
 ## include
 include ~/.config/sway/config.d/*
